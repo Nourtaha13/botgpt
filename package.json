@@ -14,7 +14,8 @@
     "telebot": "^1.4.1"
   },
   "scripts": {
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
