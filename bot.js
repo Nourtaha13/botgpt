@@ -8,21 +8,21 @@ export const botTele = async () => {
    const token = process.env.TELEBOT_TOKEN;
    const bot = new TeleBot(token, { polling: true });
    try {
-      // bot.sendMessage(-1001419964099, "fuck all");
-      const getIds = await sendMessage();
-      getIds.forEach((id) => {
-         new Promise(async (_) => {
-            try {
-               bot.sendMessage(
-                  id,
-                  `يمكنك تجربه الموقع الخاص بالبوت ايضا
-https://chatgpt-steel.vercel.app/`
-               ).catch((err) => console.log(err));
-            } catch (error) {
-               console.log(error);
-            }
-         });
-      });
+//       // bot.sendMessage(-1001419964099, "fuck all");
+//       const getIds = await sendMessage();
+//       getIds.forEach((id) => {
+//          new Promise(async (_) => {
+//             try {
+//                bot.sendMessage(
+//                   id,
+//                   `يمكنك تجربه الموقع الخاص بالبوت ايضا
+// https://chatgpt-steel.vercel.app/`
+//                ).catch((err) => console.log(err));
+//             } catch (error) {
+//                console.log(error);
+//             }
+//          });
+//       });
       //       await bot.on("/start", async (msg) => {
       //          new Promise(async (_) => {
       //             try {
