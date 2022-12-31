@@ -82,7 +82,7 @@ You can send /chat msg...
                   bot.sendMessage(msg.chat.id, "Wait ..", {
                      replyToMessage: msg?.message_id,
                   });
-                  bot.sendMessage(msg.chat.id, await openAiDate(prompt), {
+                  bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                      replyToMessage: msg?.message_id,
                   }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
                      replyToMessage: msg?.message_id,
@@ -105,7 +105,7 @@ You can send /chat msg...
                        bot.sendMessage(msg.chat.id, "Wait ..", {
                           replyToMessage: msg?.message_id,
                        });
-                       bot.sendMessage(msg.chat.id, await openAiDate(prompt), {
+                       bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                           replyToMessage: msg?.message_id,
                        }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
                      replyToMessage: msg?.message_id,
@@ -145,7 +145,7 @@ You can send /chat msg...
                   bot.sendMessage(msg.chat.id, "Wait ..", {
                      replyToMessage: msg?.message_id,
                   });
-                  bot.sendMessage(msg.chat.id, await openAiDate(prompt), {
+                  bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                      replyToMessage: msg?.message_id,
                   }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
                      replyToMessage: msg?.message_id,
