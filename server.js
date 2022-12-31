@@ -5,7 +5,7 @@ import { botTele } from "./bot.js";
 import { openAiDate } from "./openai.js";
 dotenv.config();
 const PORT = process.env.PORT || 8080;
-// botTele().catch(err => console.log(err));
+botTele().catch(err => console.log(err));
 
 const app = express();
 app.use(cors());
