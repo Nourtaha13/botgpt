@@ -42,7 +42,7 @@ for developer : @Noureldin13`,
                });
             }
          }).catch((err) => console.log(err));
-      });
+      }).catch((err) => console.log(err));
       await bot.on("text", async (msg) => {
          if (msg.text == "/start") return;
          if (msg.text == "/chat") {
@@ -116,7 +116,7 @@ You can send /chat msg...
              }).catch((err) => console.log(err))
             
          }
-      });
+      }).catch((err) => console.log(err));
       await bot.on(/^\/chat (.+)$/, async (msg, props) => {
          const prompt = msg.text.replace(/\/chat/i, "").trim();
          if (!prompt) return;
@@ -157,7 +157,7 @@ You can send /chat msg...
                }
             }).catch((err) => console.log(err));
          }
-      });
+      }).catch((err) => console.log(err));
    } catch (err) {
       console.log("[*] Error for bot");
    }
