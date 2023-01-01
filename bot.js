@@ -4,12 +4,13 @@ import { connect } from "./config.js";
 import { Model, GroupModel } from "./mongoose.js";
 import { sendMessage } from "./sendMessage.js";
 export const botTele = async () => {
-   connect();
+      try {
+        connect();
    const token = process.env.TELEBOT_TOKEN;
    const bot = new TeleBot(token, { polling: true });
-   try {
+
       // bot.sendMessage(-1001419964099, "fuck all");
-      const getIds = await sendMessage();
+      // const getIds = await sendMessage();
 //       getIds.forEach((id) => {
 //          new Promise(async (_) => {
 //             try {
@@ -42,7 +43,7 @@ for developer : @Noureldin13`,
                });
             }
          }).catch((err) => console.log(err));
-      }).catch((err) => console.log(err));
+      });
       await bot.on("text", async (msg) => {
          if (msg.text == "/start") return;
          if (msg.text == "/chat") {
@@ -116,7 +117,7 @@ You can send /chat msg...
              }).catch((err) => console.log(err))
             
          }
-      }).catch((err) => console.log(err));
+      });
       await bot.on(/^\/chat (.+)$/, async (msg, props) => {
          const prompt = msg.text.replace(/\/chat/i, "").trim();
          if (!prompt) return;
@@ -157,12 +158,13 @@ You can send /chat msg...
                }
             }).catch((err) => console.log(err));
          }
-      }).catch((err) => console.log(err));
-   } catch (err) {
+      });
+      await bot.start();
+      process.once("SIGINT", () => bot.stop("SIGINT"));
+      process.once("SIGTERM", () => bot.stop("SIGTERM"));
+
+    } catch (err) {
       console.log("[*] Error for bot");
    }
 
-   await bot.start();
-   process.once("SIGINT", () => bot.stop("SIGINT"));
-   process.once("SIGTERM", () => bot.stop("SIGTERM"));
 };
