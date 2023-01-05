@@ -40,7 +40,7 @@ for developer : @Noureldin13`,
             } catch (error) {
                bot.sendMessage(msg.chat.id, JSON.stringify(error), {
                   replyToMessage: msg?.message_id,
-               });
+               }).catch((err) => console.log(err));
             }
          }).catch((err) => console.log(err));
       });
@@ -55,7 +55,7 @@ You can send /chat msg...
                {
                   replyToMessage: msg?.message_id,
                }
-            );
+            ).catch((err) => console.log(err));
          }
          const findUser = await Model.findById(msg.chat.id);
 
@@ -82,12 +82,10 @@ You can send /chat msg...
                try {
                   bot.sendMessage(msg.chat.id, "Wait ..", {
                      replyToMessage: msg?.message_id,
-                  });
+                  }).catch((err) => console.log(err));
                   bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                      replyToMessage: msg?.message_id,
-                  }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
-                     replyToMessage: msg?.message_id,
-                  }));
+                  }).catch((err) => console.log(err));
                } catch (error) {
                   bot.sendMessage(msg.chat.id, JSON.stringify(error), {
                      replyToMessage: msg?.message_id,
@@ -105,12 +103,10 @@ You can send /chat msg...
                  try {
                        bot.sendMessage(msg.chat.id, "Wait ..", {
                           replyToMessage: msg?.message_id,
-                       });
+                       }).catch((err) => console.log(err));
                        bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                           replyToMessage: msg?.message_id,
-                       }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
-                     replyToMessage: msg?.message_id,
-                  }));
+                       }).catch((err) => console.log(err));
                     } catch (error) {
                        console.log(error);
                     }
@@ -145,12 +141,10 @@ You can send /chat msg...
                try {
                   bot.sendMessage(msg.chat.id, "Wait ..", {
                      replyToMessage: msg?.message_id,
-                  });
+                  }).catch((err) => console.log(err));
                   bot.sendMessage(msg.chat.id, await openAiDate(prompt).catch(err => console.log(err)), {
                      replyToMessage: msg?.message_id,
-                  }).catch((err) => bot.sendMessage(msg.chat.id, "Somthing error ..", {
-                     replyToMessage: msg?.message_id,
-                  }));
+                  }).catch((err) => console.log(err));
                } catch (error) {
                   bot.sendMessage(msg.chat.id, JSON.stringify(error), {
                      replyToMessage: msg?.message_id,
