@@ -4,6 +4,8 @@ import cors from "cors";
 import { botTele } from "./bot.js";
 import { connect } from "./config.js";
 import { openAiDate } from "./openai.js";
+import { ViewsModel } from "./mongoose.js";
+
 dotenv.config();
 const PORT = process.env.PORT || 8080;
 botTele().catch(err => console.log(err));
