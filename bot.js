@@ -1,11 +1,10 @@
 import TeleBot from "telebot";
 import { openAiDate } from "./openai.js";
-import { connect } from "./config.js";
+
 import { Model, GroupModel } from "./mongoose.js";
 import { sendMessage } from "./sendMessage.js";
 export const botTele = async () => {
       try {
-        connect();
    const token = process.env.TELEBOT_TOKEN;
    const bot = new TeleBot(token, { polling: true });
 
